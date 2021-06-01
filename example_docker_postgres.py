@@ -20,14 +20,15 @@ if __name__ == '__main__':
     # create a Dejavu instance
     djv = Dejavu(config)
 
-    '''
+    
     # Fingerprint all the mp3's in the directory we give it
-    djv.fingerprint_directory("mp3_NL", [".mp3"], 1)
-    '''
+    djv.fingerprint_directory("mp3_sample_20", [".mp3"], 1)
 
+    '''
     # Recognize audio from a file
     results = djv.recognize(FileRecognizer, "input_test/record_brickbyboringbrick.mp4")
     print(f"From file we recognized: {results}\n")
+    '''
 
     '''
     # Or use a recognizer without the shortcut, in anyway you would like
