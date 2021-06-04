@@ -7,16 +7,23 @@ services:
       - POSTGRES_DB=dejavu
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
-    networks:
-      - db_network
   python:
+    command: python manage.py runserver 0.0.0.0:8005
+    ports:
+      - "8005:8005"
     build:
       context: ./docker/python
     volumes:
       - .:/code
     depends_on:
       - db
-    networks:
-      - db_network
-networks:
-  db_network:
+  frontend:
+    build:
+      context: ./docker/frontend
+    container_name: frontend
+    volumes:
+      - './musicfp-frontend:/app'
+      - '/app/node_modules'
+    ports:
+      - "3001:3000"
+    tty: true

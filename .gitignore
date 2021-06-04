@@ -3,4 +3,4 @@ wav
 mp3
 .DS_Store
 *.cnf
-20210106-22:14.sql
+./docker/postgres/init.sql
