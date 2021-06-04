@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = "http://0.0.0.0:8005"
+const API_BASE = 'http://172.31.0.4:8000'
 
 export const sendAudio = async (blob, setResponse, setShowModal, setResults) => {
   var fd = new FormData();

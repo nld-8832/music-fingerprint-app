@@ -1,5 +1,4 @@
 import './modal.css';
-import CloseImg from '../close.png';
 import ModalSection from './ModalSection';
 import SectionContent from './SectionContent';
 import EmptyResults from './EmptyResults';
