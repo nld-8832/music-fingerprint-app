@@ -5,13 +5,14 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view, parser_classes
 from rest_framework.parsers import MultiPartParser
 from musicfp.encoder import MyEncoder
+# from dejavu.melgan_vc.melganvc import get_networks, shape, wav_to_wav
 import os
 import json
 
 # Create your views here.
 
 config = {
-    "database": {
+    "database":  {
         "host": "db",
         "user": "postgres",
         "password": "password",
@@ -39,3 +40,19 @@ def recognize(request):
         results = djv.recognize(FileRecognizer, FILE_NAME)
         results = json.dumps(results, cls=MyEncoder, indent=4)
         return HttpResponse(results)
+
+
+@csrf_exempt
+@api_view(['GET', 'POST'])
+@parser_classes([MultiPartParser])
+def voice_conversion(request):
+    if request.method == "POST":
+        # blob = request.data.__getitem__('audio_data').file.read()
+        # if os.path.exists(FILE_NAME):
+        #     os.remove(FILE_NAME)
+        # with open(FILE_NAME, mode='bx') as f:
+        #     f.write(blob)
+        # gen, critic, siam, _ = get_networks(shape, load_model=True,
+        #                                                       path='ckpts')
+        # output = wav_to_wav('../../' + FILE_NAME)
+        return HttpResponse("hello")
