@@ -26,8 +26,8 @@ OFFSET_SECS = 'offset_seconds'
 
 # DATABASE CLASS INSTANCES:
 DATABASES = {
-    'mysql': ("dejavu.database_handler.mysql_database", "MySQLDatabase"),
-    'postgres': ("dejavu.dejavu.database_handler.postgres_database", "PostgreSQLDatabase")
+    'mysql': ("backend.database_handler.mysql_database", "MySQLDatabase"),
+    'postgres': ("backend.backend.database_handler.postgres_database", "PostgreSQLDatabase")
 }
 
 # TABLE SONGS
@@ -52,7 +52,7 @@ FIELD_OFFSET = 'offset'
 # changes the morphology mask when looking for maximum peaks on the spectrogram matrix.
 # Possible values are: [1, 2]
 # Where 1 sets a diamond morphology which implies that diagonal elements are not considered as neighbors (this
-# is the value used in the original dejavu code).
+# is the value used in the original backend code).
 # And 2 sets a square mask, i.e. all elements are considered neighbors.
 CONNECTIVITY_MASK = 2
 

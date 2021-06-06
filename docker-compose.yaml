@@ -4,7 +4,7 @@ services:
     build:
       context: ./docker/postgres
     environment:
-      - POSTGRES_DB=dejavu
+      - POSTGRES_DB=backend
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
   python:

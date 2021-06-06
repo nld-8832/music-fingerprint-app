@@ -1,11 +1,11 @@
 from django.http import HttpResponse
-from dejavu.dejavu import Dejavu
-from dejavu.dejavu.logic.recognizer.file_recognizer import FileRecognizer
+from backend.dejavu import Dejavu
+from backend.dejavu.logic.recognizer.file_recognizer import FileRecognizer
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view, parser_classes
 from rest_framework.parsers import MultiPartParser
 from musicfp.encoder import MyEncoder
-# from dejavu.melgan_vc.melganvc import get_networks, shape, wav_to_wav
+# from backend.melgan_vc.melganvc import get_networks, shape, wav_to_wav
 import os
 import json
 
@@ -16,7 +16,7 @@ config = {
         "host": "db",
         "user": "postgres",
         "password": "password",
-        "database": "dejavu"
+        "database": "backend"
     },
     "database_type": "postgres"
 }
@@ -47,12 +47,12 @@ def recognize(request):
 @parser_classes([MultiPartParser])
 def voice_conversion(request):
     if request.method == "POST":
-        # blob = request.data.__getitem__('audio_data').file.read()
-        # if os.path.exists(FILE_NAME):
-        #     os.remove(FILE_NAME)
-        # with open(FILE_NAME, mode='bx') as f:
-        #     f.write(blob)
-        # gen, critic, siam, _ = get_networks(shape, load_model=True,
-        #                                                       path='ckpts')
-        # output = wav_to_wav('../../' + FILE_NAME)
+        blob = request.data.__getitem__('audio_data').file.read()
+        if os.path.exists(FILE_NAME):
+            os.remove(FILE_NAME)
+        with open(FILE_NAME, mode='bx') as f:
+            f.write(blob)
+        gen, critic, siam, _ = get_networks(shape, load_model=True,
+                                                              path='ckpts')
+        output = wav_to_wav('../../' + FILE_NAME)
         return HttpResponse("hello")

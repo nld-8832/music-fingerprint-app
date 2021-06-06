@@ -12,10 +12,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pydub import AudioSegment
 
-from dejavu.dejavu.config.settings import (DEFAULT_FS, DEFAULT_OVERLAP_RATIO,
-                                    DEFAULT_WINDOW_SIZE, HASHES_MATCHED,
-                                    OFFSET, RESULTS, SONG_NAME, TOTAL_TIME)
-from dejavu.dejavu.logic.decoder import get_audio_name_from_path
+from backend.dejavu.config.settings import (DEFAULT_FS, DEFAULT_OVERLAP_RATIO,
+                                            DEFAULT_WINDOW_SIZE, HASHES_MATCHED,
+                                            OFFSET, RESULTS, SONG_NAME, TOTAL_TIME)
+from backend.dejavu.logic.decoder import get_audio_name_from_path
 
 
 class DejavuTest:
@@ -120,7 +120,7 @@ class DejavuTest:
             line = self.get_line_id(song)
             result = subprocess.check_output([
                 "python",
-                "dejavu.py",
+                "backend.py",
                 '-r',
                 'file',
                 join(self.test_folder, f)])

@@ -10,12 +10,12 @@ from scipy.ndimage.morphology import (binary_erosion,
                                       generate_binary_structure,
                                       iterate_structure)
 
-from dejavu.dejavu.config.settings import (CONNECTIVITY_MASK, DEFAULT_AMP_MIN,
-                                    DEFAULT_FAN_VALUE, DEFAULT_FS,
-                                    DEFAULT_OVERLAP_RATIO, DEFAULT_WINDOW_SIZE,
-                                    FINGERPRINT_REDUCTION, MAX_HASH_TIME_DELTA,
-                                    MIN_HASH_TIME_DELTA,
-                                    PEAK_NEIGHBORHOOD_SIZE, PEAK_SORT)
+from backend.dejavu.config.settings import (CONNECTIVITY_MASK, DEFAULT_AMP_MIN,
+                                            DEFAULT_FAN_VALUE, DEFAULT_FS,
+                                            DEFAULT_OVERLAP_RATIO, DEFAULT_WINDOW_SIZE,
+                                            FINGERPRINT_REDUCTION, MAX_HASH_TIME_DELTA,
+                                            MIN_HASH_TIME_DELTA,
+                                            PEAK_NEIGHBORHOOD_SIZE, PEAK_SORT)
 
 
 def fingerprint(channel_samples: List[int],
@@ -85,7 +85,7 @@ def get_2D_peaks(arr2D: np.array, plot: bool = False, amp_min: int = DEFAULT_AMP
     # find local maxima using our filter mask
     local_max = maximum_filter(arr2D, footprint=neighborhood) == arr2D
 
-    # Applying erosion, the dejavu documentation does not talk about this step.
+    # Applying erosion, the backend documentation does not talk about this step.
     background = (arr2D == 0)
     eroded_background = binary_erosion(background, structure=neighborhood, border_value=1)
 

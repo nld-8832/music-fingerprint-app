@@ -1,10 +1,10 @@
 from time import time
 from typing import Dict
 
-import dejavu.dejavu.logic.decoder as decoder
-from dejavu.dejavu.base_classes.base_recognizer import BaseRecognizer
-from dejavu.dejavu.config.settings import (ALIGN_TIME, FINGERPRINT_TIME, QUERY_TIME,
-                                    RESULTS, TOTAL_TIME)
+import backend.dejavu.logic.decoder as decoder
+from backend.dejavu.base_classes.base_recognizer import BaseRecognizer
+from backend.dejavu.config.settings import (ALIGN_TIME, FINGERPRINT_TIME, QUERY_TIME,
+                                            RESULTS, TOTAL_TIME)
 
 
 class FileRecognizer(BaseRecognizer):

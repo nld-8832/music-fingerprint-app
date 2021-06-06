@@ -4,7 +4,7 @@ from typing import Dict, List, Tuple
 
 import numpy as np
 
-from dejavu.dejavu.config.settings import DEFAULT_FS
+from backend.dejavu.config.settings import DEFAULT_FS
 
 
 class BaseRecognizer(object, metaclass=abc.ABCMeta):

@@ -1,8 +1,8 @@
 import json
 
-from dejavu import Dejavu
-# from dejavu.dejavu.logic.recognizer.file_recognizer import FileRecognizer
-# from dejavu.dejavu.logic.recognizer.microphone_recognizer import MicrophoneRecognizer
+from backend import Dejavu
+# from backend.backend.logic.recognizer.file_recognizer import FileRecognizer
+# from backend.backend.logic.recognizer.microphone_recognizer import MicrophoneRecognizer
 
 # load config from a JSON file (or anything outputting a python dictionary)
 config = {
@@ -10,7 +10,7 @@ config = {
         "host": "db",
         "user": "postgres",
         "password": "password",
-        "database": "dejavu"
+        "database": "backend"
     },
     "database_type": "postgres"
 }

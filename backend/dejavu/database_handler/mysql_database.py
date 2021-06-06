@@ -3,11 +3,11 @@ import queue
 import mysql.connector
 from mysql.connector.errors import DatabaseError
 
-from dejavu.dejavu.base_classes.common_database import CommonDatabase
-from dejavu.dejavu.config.settings import (FIELD_FILE_SHA1, FIELD_FINGERPRINTED,
-                                    FIELD_HASH, FIELD_OFFSET, FIELD_SONG_ID,
-                                    FIELD_SONGNAME, FIELD_TOTAL_HASHES,
-                                    FINGERPRINTS_TABLENAME, SONGS_TABLENAME)
+from backend.dejavu.base_classes.common_database import CommonDatabase
+from backend.dejavu.config.settings import (FIELD_FILE_SHA1, FIELD_FINGERPRINTED,
+                                            FIELD_HASH, FIELD_OFFSET, FIELD_SONG_ID,
+                                            FIELD_SONGNAME, FIELD_TOTAL_HASHES,
+                                            FINGERPRINTS_TABLENAME, SONGS_TABLENAME)
 
 
 class MySQLDatabase(CommonDatabase):

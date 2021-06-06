@@ -6,16 +6,16 @@ from itertools import groupby
 from time import time
 from typing import Dict, List, Tuple
 
-import dejavu.dejavu.logic.decoder as decoder
-from dejavu.dejavu.base_classes.base_database import get_database
-from dejavu.dejavu.config.settings import (DEFAULT_FS, DEFAULT_OVERLAP_RATIO,
-                                    DEFAULT_WINDOW_SIZE, FIELD_FILE_SHA1,
-                                    FIELD_TOTAL_HASHES,
-                                    FINGERPRINTED_CONFIDENCE,
-                                    FINGERPRINTED_HASHES, HASHES_MATCHED,
-                                    INPUT_CONFIDENCE, INPUT_HASHES, OFFSET,
-                                    OFFSET_SECS, SONG_ID, SONG_NAME, TOPN)
-from dejavu.dejavu.logic.fingerprint import fingerprint
+import backend.dejavu.logic.decoder as decoder
+from backend.dejavu.base_classes.base_database import get_database
+from backend.dejavu.config.settings import (DEFAULT_FS, DEFAULT_OVERLAP_RATIO,
+                                            DEFAULT_WINDOW_SIZE, FIELD_FILE_SHA1,
+                                            FIELD_TOTAL_HASHES,
+                                            FINGERPRINTED_CONFIDENCE,
+                                            FINGERPRINTED_HASHES, HASHES_MATCHED,
+                                            INPUT_CONFIDENCE, INPUT_HASHES, OFFSET,
+                                            OFFSET_SECS, SONG_ID, SONG_NAME, TOPN)
+from backend.dejavu.logic.fingerprint import fingerprint
 
 
 class Dejavu:
