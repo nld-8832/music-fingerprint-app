@@ -1,6 +1,6 @@
-# music-fingerprint-app
+# INT3411_20's final project - Music fingerprinting app
 
-## Members
+## Group's members
 
 Đặng Nhật Linh - 17021283 <br>
 Phạm Thái Sơn - 17021330
