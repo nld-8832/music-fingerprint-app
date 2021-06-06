@@ -20,6 +20,11 @@
   justify-content: center;
 }
 
+.mode-menu {
+  width: 300px !important;
+  height: 70px !important;
+}
+
 .mode {
   border-radius: 25px;
   margin: 10px;

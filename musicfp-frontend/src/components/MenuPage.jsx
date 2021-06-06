@@ -4,11 +4,11 @@ const MenuPage = props => {
   const { setPageState } = props
   return (
     <>
-      <div className="mode" onClick={() => setPageState("upload")}>
-        <span style={{color: "black"}}>Upload file</span>
+      <div className="mode mode-menu" onClick={() => setPageState("record")}>
+        <span style={{color: "black"}}>Music recognition</span>
       </div>
-      <div className="mode" onClick={() => setPageState("record")}>
-        <span style={{color: "black"}}>Record</span>
+      <div className="mode mode-menu" onClick={() => setPageState("vc")}>
+        <span style={{color: "black"}}>Voice conversion</span>
       </div>
     </>
   )

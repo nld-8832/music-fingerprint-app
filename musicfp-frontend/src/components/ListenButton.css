@@ -96,3 +96,21 @@
     opacity: 0;
   }
 } */
+
+.audio-wrapper {
+
+}
+
+audio {
+    margin-left: 10px;
+}
+
+.audio-row {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+}

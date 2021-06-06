@@ -1,11 +1,11 @@
 import AppContainer from './AppContainer';
-import ListenButton from './ListenButton';
+import ListenButtonVC from './ListenButton_VC';
 
-const ListenPage = props => {
+const VCPage = props => {
   const { setPageState, setShowModal, setResults } = props
   return (
     <>
-      <ListenButton setShowModal={setShowModal} setResults={setResults}/>
+      <ListenButtonVC setShowModal={setShowModal} setResults={setResults}/>
       <div className="mode" onClick={() => setPageState("menu")}>
         <span style={{color: "black"}}>Go back</span>
       </div>
@@ -13,4 +13,4 @@ const ListenPage = props => {
   )
 }
 
-export default ListenPage;
+export default VCPage;

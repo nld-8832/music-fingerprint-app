@@ -1,12 +1,13 @@
 import AppContainer from './components/AppContainer';
 import MenuPage from './components/MenuPage';
 import ListenPage from './components/ListenPage';
+import VCPage from './components/VCPage';
 import Modal from './components/Modal';
 import { useState } from 'react';
 
 const MENU_STATE = "menu"
 const RECORD_STATE = "record"
-const UPLOAD_STATE = "upload"
+const VC_STATE = "vc"
 
 const App = () => {
   const [ pageState, setPageState ] = useState(MENU_STATE);
@@ -16,12 +17,19 @@ const App = () => {
     if(pageState === MENU_STATE) {
       return <MenuPage setPageState={setPageState}/>
     }
-    if(pageState === RECORD_STATE) {
-      return <ListenPage setPageState={setPageState}/>
+    if(pageState === VC_STATE) {
+      return <VCPage setPageState={setPageState}/>
     }
-    // if(pageState == MENU_STATE) {
-    //   return <MenuPage/>
-    // }
+    if(pageState == RECORD_STATE) {
+       return (
+          <>
+              <ListenPage setPageState={setPageState} setShowModal={setShowModal} setResults={setResults}/>
+              <Modal show={showModal} handleClose={hideModal} results={results}>
+                  <p>Modal</p>
+              </Modal>
+          </>
+       )
+    }
 
   }
   const hideModal = () => {
@@ -30,10 +38,7 @@ const App = () => {
 
   return (
     <AppContainer>
-      <ListenPage setPageState={setPageState} setShowModal={setShowModal} setResults={setResults}/>
-      <Modal show={showModal} handleClose={hideModal} results={results}>
-          <p>Modal</p>
-      </Modal>
+      {renderComp()}
     </AppContainer>
   );
 }
