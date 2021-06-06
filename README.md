@@ -2,12 +2,12 @@
 
 ## Members
 
-Đặng Nhật Linh - 17021283
+Đặng Nhật Linh - 17021283 <br>
 Phạm Thái Sơn - 17021330
 
 ## Report
 
-The report file is in the root directory of this github, is in PDF format and named "XLTN - Final Report.pdf".
+The report file is in the root directory of this github, is in PDF format and named ***"XLTN - Final Report.pdf"***.
 
 ## Usage
 
